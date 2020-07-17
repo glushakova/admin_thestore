@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "Pions",
+    "price": 12,
+    "country": "Belarus",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacus elit, consequat eu magna non, aliquam convallis risus. Nunc tincidunt facilisis ipsum quis pellentesque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; ",
+    "countAvailable": 12,
+    "imageUrl": "https://images.dostavkin.su/uploads/images/large/403/927/40392746_p0.jpg»"
+  },
+  {
+    "id": 2,
+    "name": "Money Tree",
+    "price": 47,
+    "country": "Canada",
+    "description": "The Money Tree is a popular houseplant because of its resilience, ease of growth, and fun braided trunk.",
+    "countAvailable": 10,
+    "imageUrl": "https://images.dostavkin.su/uploads/images/large/003/953/00395327_p0.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Monstera Deliciosa",
+    "price": 56,
+    "country": "USA",
+    "description": "Nicknamed the “swiss cheese plant”, the Monstera deliciosa is famous for its quirky natural leaf holes. A vibrant green beauty, it can give any interior space instant jungle vibes, and only gets better with time.",
+    "countAvailable": 20,
+    "imageUrl": "https://avatars.mds.yandex.net/get-pdb/2205040/bae60863-632d-4d70-a01e-4b367b7dd337/s1200?webp=false"
+  },
+  {
+    "id": 4,
+    "name": "Echeveria Preta",
+    "price": 35,
+    "country": "Australia",
+    "description": "The Echeveria will make a great desk plant! It is known for its iconic rosette-shape, succulent nature, and pet-friendliness. Its fleshy water-storing leaves means it can survive on little more than sunshine. This variety is a dark purple black hue. It comes potted in our limited edition Balboa planter.",
+    "countAvailable": 50,
+    "imageUrl": "https://img11.postila.ru/data/bd/01/42/92/bd0142929136dbcd83baebca7d632840e86b845007f77f4aa86c90ce51b5add1.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Echeveria",
+    "price": 26,
+    "country": "Mexico",
+    "description": "Our favorite plant gift to give – the charming Echeveria is known for its iconic rosette-shape, succulent nature, and pet-friendliness. Its fleshy water-storing leaves means it can survive on little more than sunshine. It comes hand-potted in your choice of earthenware planter.",
+    "countAvailable": 40,
+    "imageUrl": "https://www.ikea-club.org/images/productcatalog/gallery/60349554/1.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Parlor Palm",
+    "price": 32,
+    "country": "Brazil",
+    "description": "The Parlor Palm is a favorite easy-care palm with tropical fronds known for its air purifying qualities.",
+    "countAvailable": 10,
+    "imageUrl": "https://bambuk-flowers.ru/image/cache/catalog/2019-06-14-12-18-27-1000x1000.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Maranta",
+    "price": 37,
+    "country": "Bulgaria",
+    "description": "Nicknamed the “prayer plant”, the Maranta is famous for the unique up and down movements of its dramatic foliage. It can tolerate low light, is air purifying, and makes a fantastic birthday gift for your favorite plant parent.",
+    "countAvailable": 65,
+    "imageUrl": "https://tdstroitel.ru/images/detailed/58/0Г-00564037new.jpg"
+  },
+  {
+    "id": 8,
+    "name": "ZZ Plant",
+    "price": 57,
+    "country": "New Zealand",
+    "description": "The ZZ Plant is characterized by its thick waxy green leaves. It is a great air purifying option that can tolerate low light, making it a perfect plant for beginners.",
+    "countAvailable": 5,
+    "imageUrl": "http://185504.selcdn.ru/static/villa.reshop.by/catalog/516/1253487895b64749c72252_original.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Calathea Orbifolia",
+    "price": 250,
+    "country": "Belarus",
+    "description": "Add a pop of pattern to any space all year long with our large 4' tall faux Calathea Orbifolia.",
+    "countAvailable": 30,
+    "imageUrl": "https://мояоколица.рф/wp-content/uploads/2019/03/Croton7.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Philodendron Green",
+    "price": 36,
+    "country": "Estonia",
+    "description": "TWhy is the Philodendron our most popular plant? It could be its heart-shaped vibrant green leaves, its easy-going nature, or its quick-growing trailing vines. It’s the perfect plant to show your loved one you’re rooting for them.",
+    "countAvailable": 77,
+    "imageUrl": "https://www.ikea-club.org/images/productcatalog/gallery/80371959/1.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Marble Pothos",
+    "price": 22,
+    "country": "Belarus",
+    "description": "Give your home office an upgrade! The Pothos Marble and its quick growing vines full of variegated green and white leaves will make any space look more lush. It is a great low maintenance choice for beginners.",
+    "countAvailable": 120,
+    "imageUrl": "https://www.healthcarefamilycreditunion.org/cmss_files/attachmentlibrary/peace-lilly.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Schefflera",
+    "price": 34,
+    "country": "Belarus",
+    "description": "This low maintenance plant is nicknamed the umbrella tree because of the attractive arrangement of its leaflets. Bushy in shape, this lively plant is a no-brainer for any room in your home. We try our best to match what you see in the picture, but some leaves might have slight variegation.",
+    "countAvailable": 35,
+    "imageUrl": "https://images.dostavkin.su/uploads/images/large/303/953/30395316_p0.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Bird’s Nest Fern",
+    "price": 38,
+    "country": "Estonia",
+    "description": "If you’re looking for the perfect tropical houseplant, look no further than the Bird’s Nest Fern. Known for its wavy ripple-edge fronds that grow out of a central rosette, this plant will add vibrant pop of green to any space. We love it because it’s considered non-toxic, making it safe to keep around your furry friends. A best seller for the best plant parent you know (we're lookin’ at you).",
+    "countAvailable": 45,
+    "imageUrl": "https://idea-atyrau.kz/upload/iblock/ea5/ea52fd75dcb92ab31c6fff7a601385a6.JPG"
+  },
+  {
+    "id": 14,
+    "name": "Snake Plant Laurentii",
+    "price": 33,
+    "country": "France",
+    "description": "The Snake Plant Laurentii is a succulent plant characterized by its upright swordlike leaves with vibrant yellow edges. A multitasker, the snake plant purifies indoor air by removing toxins such as formaldehyde, xylene, and toluene.",
+    "countAvailable": 10,
+    "imageUrl": "https://avatars.mds.yandex.net/get-pdb/38069/01e6f1c7-5c40-4476-81b6-8064e84472ee/s1200?webp=false"
+  },
+  {
+    "id": 15,
+    "name": "Snake Laurentii",
+    "price": 140,
+    "country": "USA",
+    "description": "The Snake Plant Laurentii is a succulent plant characterized by its upright swordlike leaves with vibrant yellow edges.",
+    "countAvailable": 90,
+    "imageUrl": "https://images.dostavkin.su/uploads/images/large/504/291/50429122_p1.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Snake Zeylanica",
+    "price": 154,
+    "country": "Ghana",
+    "description": "The Snake Plant Zeylanica is a succulent plant characterized by its upright swordlike leaves with green reptile-like variegation.",
+    "countAvailable": 100,
+    "imageUrl": "https://noyabrsk.spshn.ru/files/public/2647/70_1539933792.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Monstera",
+    "price": 200,
+    "country": "Belarus",
+    "description": "Nicknamed the “swiss cheese plant”, the Monstera deliciosa is famous for its quirky natural leaf holes. A vibrant green beauty, it can give any interior space instant jungle vibes.",
+    "countAvailable": 250,
+    "imageUrl": "https://stocvetov.ru/images/cms/data/flowers/listvennie/aspargaus/asparagus_sprengerii_1.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Anthurium",
+    "price": 68,
+    "country": "Romania",
+    "description": "Anthuriums are the world’s longest blooming houseplant – they are rarely without their showy blooms! Each bloom can last up to eight weeks, and new ones will pop up often. These aren’t actual flowers, but modified waxy leaves. Anthuriums flourish and bloom best in bright indirect light.",
+    "countAvailable": 50,
+    "imageUrl": "https://krasnodarflorist.ru/upload/resizer2/24/90a/90a473e51c060857072c1697831fa25b.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Fern Kokedama",
+    "price": 75,
+    "country": "Portugal",
+    "description": "A traditional Japanese art form, the word Kokedama translates to ’moss ball’. There is no upkeep necessary with this preserved fern kokedama – simply hang and enjoy, or sit on a flat surface. This is a real kokedama that has been naturally preserved. It is non-toxic and environmentally friendly. Each kokedama is handcrafted and unique – natural variations will occur. There might be a slight odor upon unpacking your kokedama, but it will subside in about 3 weeks. Keep it out of direct light and never water. Your moss ball will measure around 3 wide; product is about 8 tall by 8 wide including preserved fern.",
+    "countAvailable": 100,
+    "imageUrl": "https://fismart.ru/upload/iblock/1dc/1dcd0ec1c9a28d44789155239753115a.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Olmsted Parlor Palm",
+    "price": 35,
+    "country": "Spain",
+    "description": "TFrederick Law Olmsted is largely regarded as the father of American landscape architecture. Together with his mentor Calvert Vaux, Olmsted co-designed many of the public green spaces we enjoy today. This design in his honor was one of our very first planter silhouettes.",
+    "countAvailable": 10,
+    "imageUrl": "https://s.alicdn.com/@sc01/kf/Hcb1b31c335294e52b1cf9084d0512602y.jpg"
+  }
+]
