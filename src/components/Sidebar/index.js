@@ -18,7 +18,7 @@ const Sidebar = () => (
         <Link to={ROUTES.PRODUCTS}>Products</Link>
       </Menu.Item>
       <Menu.Item key="2">
-        <Link to={ROUTES.CHANGE_PRODUCT}>Orders</Link>
+        <Link to={ROUTES.ORDERS}>Orders</Link>
       </Menu.Item>
     </Menu>
   </Sider>

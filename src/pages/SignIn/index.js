@@ -1,16 +1,18 @@
 import React from 'react';
 import { Input, Button } from 'antd';
+import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 
-import { onChangeEmail, onChangePassword } from '../../actions/';
+import { onChangeEmail, onChangePassword, signIn } from '../../actions/';
 import './style.css';
 
 const SignInPage = () => {
   const email = useSelector((state) => state.auth.email);
   const password = useSelector((state) => state.auth.password);
-  const error = useSelector((state) => state.auth.error);
+  // const error = useSelector((state) => state.auth.error);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   return (
     <div className="sign-in container">
@@ -28,7 +30,13 @@ const SignInPage = () => {
           visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
         }
       />
-      <Button onClick>Sign In</Button>
+      <Button
+        onClick={() => {
+          dispatch(signIn({ email, password, history }));
+        }}
+      >
+        Sign In
+      </Button>
     </div>
   );
 };

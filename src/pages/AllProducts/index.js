@@ -1,12 +1,35 @@
-import React from 'react';
-import { Table } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Table, Button } from 'antd';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import { ROUTES } from '../../const';
 
-import data from './data.json';
-
 const ProductsPage = () => {
+  const [products, changeProducts] = useState([]);
+
+  const getProducts = async () => {
+    try {
+      const response = await axios.get(`${process.env.REACT_APP_API}/products`);
+      changeProducts(response.data);
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  const delProduct = async (prop) => {
+    try {
+      await axios.delete(`${process.env.REACT_APP_API}/products/${prop.id}`);
+      getProducts();
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
   const columns = [
     {
       title: 'id',
@@ -51,10 +74,16 @@ const ProductsPage = () => {
       key: 'operation',
       fixed: 'right',
       width: '5%',
-      render: () => (
+      render: (product) => (
         <span>
-          <a style={{ marginRight: 16 }}>Delete</a>
-          <Link to={ROUTES.CHANGE_PRODUCT} className="ant-dropdown-link">
+          <a onClick={() => delProduct(product)} style={{ marginRight: 16 }}>
+            Delete
+          </a>
+          <Link
+            key={product.id}
+            to={`${ROUTES.CHANGE_PRODUCT}/${product.id}`}
+            className="ant-dropdown-link"
+          >
             Edit
           </Link>
         </span>
@@ -64,7 +93,17 @@ const ProductsPage = () => {
 
   return (
     <div className="container">
-      <Table columns={columns} dataSource={data} pagination={false} />
+      <Link to={ROUTES.ADD_PRODUCT}>
+        <Button
+          type="primary"
+          style={{
+            marginBottom: 16,
+          }}
+        >
+          Add a product
+        </Button>
+      </Link>
+      <Table columns={columns} dataSource={products} pagination={false} />
     </div>
   );
 };

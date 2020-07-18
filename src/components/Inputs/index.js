@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Input, InputNumber, Button, Form } from 'antd';
 
 const layout = {
@@ -13,13 +13,17 @@ const tailLayout = {
   },
 };
 
-const product = {
-  name: 'Cvetok',
-  price: 20,
-};
-
-const Inputs = () => {
+const Inputs = ({ product, onFinish }) => {
   const { TextArea } = Input;
+  const {
+    name,
+    price,
+    country,
+    description,
+    countAvailable,
+    imageUrl,
+  } = product;
+
   return (
     <Form
       {...layout}
@@ -28,71 +32,61 @@ const Inputs = () => {
       initialValues={product}
       onFinish={(values) => {
         console.log(values);
+        onFinish(values);
       }}
     >
       <Form.Item
         label="Name"
         name="name"
         rules={[{ required: true, message: 'Please input name!' }]}
+        value={name}
       >
-        <Input
-          allowClear
-          // onChange={onChange}
-        />
+        <Input allowClear />
       </Form.Item>
+
       <Form.Item
         label="Price"
         name="price"
         rules={[{ required: true, message: 'Please input price!' }]}
+        value={price}
       >
-        <InputNumber
-          allowClear
-          min="1"
-          // onChange={onChange}
-        />
+        <InputNumber allowClear min="1" size="small" />
       </Form.Item>
 
       <Form.Item
         label="Country"
         name="country"
         rules={[{ required: true, message: 'Please input country!' }]}
+        value={country}
       >
-        <Input
-          placeholder="country"
-          allowClear
-          // onChange={onChange}
-        />
+        <Input placeholder="country" allowClear />
       </Form.Item>
 
       <Form.Item
         label="Description"
         name="description"
         rules={[{ required: true, message: 'Please input description!' }]}
+        value={description}
       >
         <TextArea placeholder="description" allowClear />
       </Form.Item>
+
       <Form.Item
         label="Count available"
         name="countAvailable"
         rules={[{ required: true, message: 'Please input count available!' }]}
+        value={countAvailable}
       >
-        <InputNumber
-          placeholder="count"
-          allowClear
-          min="0"
-          // onChange={onChange}
-        />
+        <InputNumber placeholder="count" allowClear min="0" size="small" />
       </Form.Item>
+
       <Form.Item
         label="Image Url"
         name="imageUrl"
         rules={[{ required: true, message: 'Please input image url!' }]}
+        value={imageUrl}
       >
-        <Input
-          placeholder="imageUrl"
-          allowClear
-          // onChange={onChange}
-        />
+        <Input placeholder="imageUrl" allowClear />
       </Form.Item>
       <Form.Item {...tailLayout}>
         <Button type="primary" htmlType="submit">

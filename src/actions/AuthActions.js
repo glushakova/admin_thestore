@@ -1,9 +1,9 @@
 import { ACTIONST_TYPE } from '../const';
 import axios from 'axios';
 
-// axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem(
-//   'token'
-// )}`;
+axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem(
+  'token'
+)}`;
 
 export const onChangeEmail = (emailValue) => ({
   type: ACTIONST_TYPE.ON_CHANGE_EMAIL,
@@ -41,7 +41,7 @@ export const signIn = ({ email, password, history }) => {
         }
       );
       dispatch(signInSuccess(response.data));
-      history.push('/main');
+      history.push('/products');
     } catch (err) {
       dispatch(signInFailure(err.message));
     }

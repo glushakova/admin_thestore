@@ -1,4 +1,6 @@
 export const ROUTES = {
+  ADD_PRODUCT: '/add-product',
+  CHANGE_ONE_PRODUCT: '/change-product/:inex',
   CHANGE_PRODUCT: '/change-product',
   PRODUCTS: '/products',
   ORDERS: '/orders',

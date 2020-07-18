@@ -1,10 +1,16 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Switch, Route, useHistory } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import jwt_decode from 'jwt-decode';
 
 import { Sidebar } from '../components';
-import { SignInPage, ProductsPage, ChangePage } from '../pages';
+import {
+  SignInPage,
+  ProductsPage,
+  ChangePage,
+  AddPage,
+  OrdersPage,
+} from '../pages';
 import { autoSignIn, signOut } from '../actions';
 import { ROUTES } from '../const';
 import './style.css';
@@ -18,11 +24,6 @@ const Navigation = () => {
 
   const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
-  const history = useHistory();
-
-  const toMainPage = () => {
-    history.push('/main');
-  };
 
   useEffect(() => {
     if (token) {
@@ -31,19 +32,31 @@ const Navigation = () => {
     }
   }, [token, dispatch]);
 
+  const authRoutes = [
+    <Route exact path={ROUTES.ADD_PRODUCT} component={AddPage} />,
+    <Route exact path={ROUTES.CHANGE_ONE_PRODUCT} component={ChangePage} />,
+    <Route exact path={ROUTES.PRODUCTS} component={ProductsPage} />,
+    <Route exact path={ROUTES.ORDERS} component={OrdersPage} />,
+  ];
+
   return (
     <BrowserRouter>
       <Layout className="layout">
         <Header className="header">
-          {user && (
-            <Button
-              onClick={() => {
-                dispatch(signOut());
-                toMainPage();
-              }}
-            >
-              Logout
-            </Button>
+          {user ? (
+            <Link to={ROUTES.SIGNIN}>
+              <Button
+                onClick={() => {
+                  dispatch(signOut());
+                }}
+              >
+                Logout
+              </Button>
+            </Link>
+          ) : (
+            <Link to={ROUTES.SIGNIN}>
+              <Button>Sign In</Button>
+            </Link>
           )}
         </Header>
         <Content>
@@ -51,10 +64,8 @@ const Navigation = () => {
             <Sidebar />
             <Content>
               <Switch>
-                <Route path={ROUTES.SIGNIN} component={SignInPage} />
-                <Route path={ROUTES.CHANGE_PRODUCT} component={ChangePage} />
-                <Route path={ROUTES.PRODUCTS} component={ProductsPage} />
-                <Route path={ROUTES.ORDERS} component={SignInPage} />
+                {user && authRoutes}
+                <Route exact path={ROUTES.SIGNIN} component={SignInPage} />
               </Switch>
             </Content>
           </Layout>
