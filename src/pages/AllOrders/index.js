@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { Table, Button } from 'antd';
+import { Table } from 'antd';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import { ROUTES } from '../../const';
 
 const OrdersPage = () => {
+  const authorization = () =>
+    (axios.defaults.headers.common[
+      'Authorization'
+    ] = `Bearer ${localStorage.getItem('token')}`);
+
   const [orders, changeOrders] = useState([]);
 
   const getOrders = async () => {
     try {
+      authorization();
       const response = await axios.get(`${process.env.REACT_APP_API}/orders`);
       changeOrders(response.data);
     } catch (err) {
@@ -21,20 +27,25 @@ const OrdersPage = () => {
     getOrders();
   }, []);
 
-  console.log(orders);
-
-  // {
-  // 	"address": "string",
-  // 	"phone": "string",
-
-  // }
-
   const columns = [
     {
       title: 'Name',
       dataIndex: 'fullName',
       key: 'fullName',
       fixed: 'left',
+      width: '10%',
+    },
+    {
+      title: 'Total Cost',
+      dataIndex: 'totalCost',
+      key: 'totalCost',
+      fixed: 'left',
+      width: '5%',
+    },
+    {
+      title: 'Phone',
+      dataIndex: 'phone',
+      key: 'phone',
       width: '10%',
     },
     {
@@ -50,12 +61,6 @@ const OrdersPage = () => {
       width: '10%',
     },
     {
-      title: 'Phone',
-      dataIndex: 'phone',
-      key: 'phone',
-      width: '10%',
-    },
-    {
       title: 'Action',
       key: 'operation',
       fixed: 'right',
@@ -64,7 +69,7 @@ const OrdersPage = () => {
         <span>
           <Link
             key={orders.id}
-            to={`${ROUTES.CHANGE_PRODUCT}/${orders.id}`}
+            to={`${ROUTES.ORDERS}/${orders.id}`}
             className="ant-dropdown-link"
           >
             Show

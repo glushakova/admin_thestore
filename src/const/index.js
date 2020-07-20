@@ -3,6 +3,7 @@ export const ROUTES = {
   CHANGE_ONE_PRODUCT: '/change-product/:inex',
   CHANGE_PRODUCT: '/change-product',
   PRODUCTS: '/products',
+  ONE_ORDER: '/orders/:inex',
   ORDERS: '/orders',
   SIGNIN: '/sign-in',
   MAIN: '/',

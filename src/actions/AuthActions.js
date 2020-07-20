@@ -1,9 +1,11 @@
 import { ACTIONST_TYPE } from '../const';
 import axios from 'axios';
 
-axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem(
-  'token'
-)}`;
+const authorization = () =>
+  (axios.defaults.headers.common[
+    'Authorization'
+  ] = `Bearer ${localStorage.getItem('token')}`);
+authorization();
 
 export const onChangeEmail = (emailValue) => ({
   type: ACTIONST_TYPE.ON_CHANGE_EMAIL,
@@ -33,6 +35,7 @@ export const signIn = ({ email, password, history }) => {
   return async (dispatch) => {
     dispatch(start());
     try {
+      authorization();
       const response = await axios.post(
         `${process.env.REACT_APP_API}/sign-in`,
         {

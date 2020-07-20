@@ -10,8 +10,9 @@ import {
   ChangePage,
   AddPage,
   OrdersPage,
+  OneOrderPage,
 } from '../pages';
-import { autoSignIn, signOut } from '../actions';
+import { autoSignIn, signOut } from '../actions/AuthActions';
 import { ROUTES } from '../const';
 import './style.css';
 
@@ -22,7 +23,7 @@ const { Header, Content, Footer } = Layout;
 const Navigation = () => {
   const token = localStorage.getItem('token');
 
-  const user = useSelector((state) => state.auth.user);
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -36,6 +37,7 @@ const Navigation = () => {
     <Route exact path={ROUTES.ADD_PRODUCT} component={AddPage} />,
     <Route exact path={ROUTES.CHANGE_ONE_PRODUCT} component={ChangePage} />,
     <Route exact path={ROUTES.PRODUCTS} component={ProductsPage} />,
+    <Route exact path={ROUTES.ONE_ORDER} component={OneOrderPage} />,
     <Route exact path={ROUTES.ORDERS} component={OrdersPage} />,
   ];
 
@@ -43,7 +45,7 @@ const Navigation = () => {
     <BrowserRouter>
       <Layout className="layout">
         <Header className="header">
-          {user ? (
+          {user && (
             <Link to={ROUTES.SIGNIN}>
               <Button
                 onClick={() => {
@@ -53,19 +55,16 @@ const Navigation = () => {
                 Logout
               </Button>
             </Link>
-          ) : (
-            <Link to={ROUTES.SIGNIN}>
-              <Button>Sign In</Button>
-            </Link>
           )}
         </Header>
         <Content>
           <Layout>
-            <Sidebar />
+            {user && <Sidebar />}
             <Content>
               <Switch>
                 {user && authRoutes}
                 <Route exact path={ROUTES.SIGNIN} component={SignInPage} />
+                <Route exact path={ROUTES.MAIN} component={SignInPage} />
               </Switch>
             </Content>
           </Layout>

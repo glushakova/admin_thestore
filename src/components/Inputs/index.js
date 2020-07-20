@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Input, InputNumber, Button, Form } from 'antd';
 
 const layout = {
@@ -89,9 +89,15 @@ const Inputs = ({ product, onFinish }) => {
         <Input placeholder="imageUrl" allowClear />
       </Form.Item>
       <Form.Item {...tailLayout}>
-        <Button type="primary" htmlType="submit">
-          Edit
-        </Button>
+        {name.length > 0 ? (
+          <Button type="primary" htmlType="submit">
+            Edit
+          </Button>
+        ) : (
+          <Button type="primary" htmlType="submit">
+            Add
+          </Button>
+        )}
       </Form.Item>
     </Form>
   );

@@ -1,4 +1,10 @@
 import { ACTIONST_TYPE } from '../const';
+import axios from 'axios';
+
+const authorization = () =>
+  (axios.defaults.headers.common[
+    'Authorization'
+  ] = `Bearer ${localStorage.getItem('token')}`);
 
 const initialState = {
   email: '',
@@ -14,12 +20,19 @@ export default (state = initialState, action) => {
       return {
         ...state,
         email: action.payload,
+        error: null,
       };
     }
     case ACTIONST_TYPE.ON_CHANGE_PASSWORD: {
       return {
         ...state,
         password: action.payload,
+        error: null,
+      };
+    }
+    case ACTIONST_TYPE.START_AUTH: {
+      return {
+        ...state,
       };
     }
     case ACTIONST_TYPE.SIGN_IN_SUCCESS: {
@@ -38,6 +51,7 @@ export default (state = initialState, action) => {
       };
     }
     case ACTIONST_TYPE.AUTO_SIGN_IN: {
+      authorization();
       return {
         ...state,
         ...initialState,

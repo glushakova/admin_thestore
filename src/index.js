@@ -9,7 +9,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import reducer from './reducer';
+import reducer from './reducer/AuthReducer';
 import Navigation from './Navigation';
 import 'antd/dist/antd.css';
 import './index.css';
