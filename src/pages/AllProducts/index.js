@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Table, Button } from 'antd';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import axios from 'axios';
 
 import { ROUTES } from '../../const';
@@ -37,6 +38,9 @@ const ProductsPage = () => {
       key: 'id',
       width: '5%',
       fixed: 'left',
+      sorter: {
+        compare: (a, b) => a.price - b.price,
+      },
     },
     {
       title: 'Name',
@@ -93,6 +97,9 @@ const ProductsPage = () => {
 
   return (
     <div className="container">
+      <Helmet>
+        <title>Products</title>
+      </Helmet>
       <Link to={ROUTES.ADD_PRODUCT}>
         <Button
           type="primary"

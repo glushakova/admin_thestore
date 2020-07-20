@@ -31,7 +31,6 @@ const Inputs = ({ product, onFinish }) => {
       className="container"
       initialValues={product}
       onFinish={(values) => {
-        console.log(values);
         onFinish(values);
       }}
     >

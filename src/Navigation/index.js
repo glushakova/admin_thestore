@@ -46,7 +46,7 @@ const Navigation = () => {
       <Layout className="layout">
         <Header className="header">
           {user && (
-            <Link to={ROUTES.SIGNIN}>
+            <Link key={ROUTES.SIGNIN} to={ROUTES.SIGNIN}>
               <Button
                 onClick={() => {
                   dispatch(signOut());
@@ -64,7 +64,11 @@ const Navigation = () => {
               <Switch>
                 {user && authRoutes}
                 <Route exact path={ROUTES.SIGNIN} component={SignInPage} />
-                <Route exact path={ROUTES.MAIN} component={SignInPage} />
+                {user ? (
+                  <Route exact path={ROUTES.MAIN} component={ProductsPage} />
+                ) : (
+                  <Route exact path={ROUTES.MAIN} component={SignInPage} />
+                )}
               </Switch>
             </Content>
           </Layout>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import { Inputs } from '../../components';
 
@@ -26,7 +27,7 @@ const ChangePage = (props) => {
     try {
       await axios.put(
         `${process.env.REACT_APP_API}/products/${props.match.params.inex}`,
-        values
+        { id: props.match.params.inex, ...values }
       );
       history.push('/products');
     } catch (err) {
@@ -36,7 +37,14 @@ const ChangePage = (props) => {
 
   if (!product) return null;
 
-  return <Inputs product={product} onFinish={onFinish} />;
+  return (
+    <>
+      <Helmet>
+        <title>Edit product</title>
+      </Helmet>
+      <Inputs product={product} onFinish={onFinish} />
+    </>
+  );
 };
 
 export { ChangePage };

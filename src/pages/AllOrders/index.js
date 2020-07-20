@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'antd';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import axios from 'axios';
 
 import { ROUTES } from '../../const';
@@ -81,6 +82,9 @@ const OrdersPage = () => {
 
   return (
     <div className="container">
+      <Helmet>
+        <title>Orders</title>
+      </Helmet>
       <div>
         <Table
           rowClassName={() => 'editable-row'}

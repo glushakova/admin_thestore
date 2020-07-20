@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import { Inputs } from '../../components';
 
@@ -25,7 +26,14 @@ const AddPage = () => {
       console.log(err.message);
     }
   };
-  return <Inputs product={product} onFinish={onFinish} />;
+  return (
+    <>
+      <Helmet>
+        <title>Add new product</title>
+      </Helmet>
+      <Inputs product={product} onFinish={onFinish} />
+    </>
+  );
 };
 
 export { AddPage };

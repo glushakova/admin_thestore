@@ -3,6 +3,7 @@ import { Input, Button } from 'antd';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
+import { Helmet } from 'react-helmet';
 
 import { onChangeEmail, onChangePassword, signIn } from '../../actions/';
 import './style.css';
@@ -16,6 +17,9 @@ const SignInPage = () => {
 
   return (
     <div className="sign-in container">
+      <Helmet>
+        <title>Sign in</title>
+      </Helmet>
       <Input.Group>
         {error && <div>{`Error: ${error}`}</div>}
         <Input
