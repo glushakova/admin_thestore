@@ -33,16 +33,6 @@ const ProductsPage = () => {
 
   const columns = [
     {
-      title: 'id',
-      dataIndex: 'id',
-      key: 'id',
-      width: '5%',
-      fixed: 'left',
-      sorter: {
-        compare: (a, b) => a.price - b.price,
-      },
-    },
-    {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',

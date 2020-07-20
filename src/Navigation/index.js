@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 
 import { Sidebar } from '../components';
@@ -22,7 +23,6 @@ const { Header, Content, Footer } = Layout;
 
 const Navigation = () => {
   const token = localStorage.getItem('token');
-
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
@@ -31,6 +31,7 @@ const Navigation = () => {
       const decoded = jwt_decode(token);
       dispatch(autoSignIn({ decoded }));
     }
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
   }, [token, dispatch]);
 
   const authRoutes = [
